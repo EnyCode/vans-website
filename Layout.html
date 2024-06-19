@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Maxime Courtier</title>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <img src="https://1000logos.net/wp-content/uploads/2016/10/Apple_logo_grey.png" />
+      </div>
+      <div id="nav">
+        <nav>
+          <ul>
+            <li><a href="#">AIRCRAFT v</a></li>
+            <li><a href="#">BUILD</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="buy">
+        <a href="#">ORDER A KIT</a>
+      </div>
+    </header>
+    <section id="hero">
+      <div class="text">
+        <span class="title">Vans' RV-8</span>
+        <br />
+        <span class="subtitle">High performance. High practicality. </span>
+      </div>
+    </section>
+  </body>
+</html>
+<style>
+  :root {
+    --primary: #fc4c02;
+		--primary-hover: #395a3b;
+		--on-primary: #fff;
+
+		--bg: #eeeff1;
+		--on-bg: #272f27;
+
+		--surface-1: #e6e4e0;
+		--on-surface-1: #272f27;
+		--surface-2: #c3d9c4;
+		--on-surface-2: #000;
+
+		--shape-radius: clamp(1rem, 2rem, 3rem);
+		--btn-radius: 0.5rem;
+
+		--transition: 0.2s ease-in-out;
+    
+    --serif-font: "eurostile", serif;
+		--sans-font: 
+			"Lato",
+			-apple-system,
+			BlinkMacSystemFont,
+			sans-serif;
+
+		--font-size-sm: clamp(14.4px, 0.07vw + 14.13px, 15px);
+		--font-size-base: clamp(18px, 0.23vw + 17.09px, 20px);
+		--font-size-md: clamp(22.5px, 0.47vw + 20.61px, 26.66px);
+		--font-size-lg: clamp(28.13px, 0.84vw + 24.76px, 35.54px);
+		--font-size-xl: clamp(35.16px, 1.39vw + 29.6px, 47.37px);
+		--font-size-xxl: clamp(43.95px, 2.18vw + 35.22px, 63.15px);
+		--font-size-xxxl: clamp(54.93px, 3.32vw + 41.64px, 84.17px);
+
+		--section-margin: 3rem;
+		--theme-grid-gap: 1rem;
+		--container-max-width: 1440px;
+		--container-max-width-narrow: 960px;
+		--container-padding: 0 1rem;
+  }
+  
+  @import url("https://p.typekit.net/p.css?s=1&k=opi5btm&ht=tk&f=25750.25753.25761.25762.25763.25764.25765.25766.25767.25768.25757&a=646323&app=typekit&e=css"); @font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 800;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff2"),url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff"),url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 800;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff2"),url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff"),url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 900;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 500;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile-extended";
+    src: url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: normal;
+}
+  
+  h1,
+	h2,
+	h3 {
+		font-family: var(--serif-font);
+		font-weight: 800;
+	}
+
+	h1 {
+		font-size: var(--font-size-xxl);
+		line-height: 1.1;
+	}
+
+	h2 {
+		font-size: var(--font-size-xl);
+		line-height: 1.1;
+	}
+
+	h3 {
+		font-size: var(--font-size-lg);
+		font-weight: 500;
+	}
+
+	h6 {
+		font-size: var(--font-size-sm);
+	}
+  
+  html {
+		font-family: system-ui, sans-serif;
+		background: var(--bg);
+		background-size: 224px;
+		height: 100%;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+		font-family: var(--sans-font);
+		font-size: var(--font-size-base);
+		color: var(--on-bg);
+		height: 100%;
+	}
+	a {
+		color: inherit;
+	}
+
+  header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    #logo img {
+      height: 4rem;
+    }
+    
+    #buy a {
+      text-decoration: none;
+      border-radius: 5rem;
+      background-color: var(--primary);
+      padding: 0.5rem 0.7rem;;
+      color: var(--on-primary);
+      font-size: var(--font-size-sm);
+      transition: background-color var(--transition);
+      font-family: var(--serif-font);
+      font-weight: 400;
+      
+      &:hover {
+        background-color: var(--primary-hover);
+      }
+    }
+    
+    nav {
+      display: flex;
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+        
+        li a {
+          text-decoration: none;
+          margin-right: 1.5rem;
+          color: inherit;
+          transition: color linear 0.15s;
+          font-family: var(--serif-font);
+          font-weight: 800;
+          
+          &:hover {
+            color: var(--primary);
+          }
+        }
+      }
+    }
+  }
+  
+  #hero {
+    background: linear-gradient(#00000022, #00000022 70%, #000000cc), url("https://www.vansaircraft.com/wp-content/uploads/2018/11/bg-hero-rv8-1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 15rem);
+    width: 100%;
+    border-bottom: 0.5rem solid var(--primary);
+    position: relative;
+    
+    .text {
+      /* float: left; */
+      position: absolute;
+      bottom: 3rem;
+      left: 20rem;
+    }
+    
+    .title {
+      font-family: var(--serif-font);
+      color: var(--on-primary);
+      font-size: var(--font-size-xxl);
+      font-style: italic;
+      font-weight: 900;
+    }
+    
+    .subtitle {
+      font-family: var(--serif-font);
+      font-size: var(--font-size-lg);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--on-primary);
+      display: block;
+      max-width: 500px;
+      line-height: 1.1;
+    }
+  }
+</style>
