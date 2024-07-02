@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Maxime Courtier</title>
+    <title>Vans' RV</title>
   </head>
   <body>
     <header>
@@ -53,6 +53,7 @@
         <a href="https://uk.linkedin.com/in/clara-smallwood-30915b42">ORDER A KIT</a>
       </div>
     </header>
+    <div id="nav-cover"></div>
     <section id="hero">
       <div class="text">
         <span class="title">Vans' RV-8</span>
@@ -251,17 +252,27 @@
 	}
   /* #endregion */
   /* #region header */
+  #nav-cover {
+    height: 97px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: var(--bg);
+    border-bottom: solid 2px var(--on-bg);
+  }
+
   header {
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: solid 1px var(--on-bg);
     
     #logo {
       width: 25rem;
       position: relative;
       height: 4rem;
+      z-index: 2;
 
       img {
         position: absolute;
@@ -274,6 +285,7 @@
       width: 25rem;
       position: relative;
       height: 4rem;
+      z-index: 2;
 
       a {
         text-decoration: none;
@@ -288,7 +300,6 @@
         position: absolute;
         right: 2rem;
         bottom: 8px;
-
         
         &:hover {
           background-color: var(--primary-hover);
@@ -311,18 +322,23 @@
           }
 
           &:hover > .dropdown {
-            display: block;
+            height: 12rem;
+
+            & > ul {
+              animation-name: slide-from-top;
+              animation-duration: 0.6s;
+              top: 65px;
+            }
           }
 
           .dropdown {
-            display: none;
+            /* display: none; */
             left: 0;
             width: 100%;
             text-align: center;
-            height: 8rem;
+            height: 2rem;
             position: absolute;
             user-select: none;
-            z-index: 10;
 
             &:hover {
               display: block;
@@ -330,7 +346,7 @@
 
             ul {
               position: absolute;
-              top: 65px;
+              top: -4rem;
               display: flex;
               gap: 3rem;
               left: 0;
@@ -338,7 +354,8 @@
               height: 8rem;
               background-color: var(--bg);
               border-bottom: solid 2px var(--on-bg);
-              transition: 
+              z-index: 0;
+
 
               .spacer {
                 flex-grow: 1;
@@ -363,6 +380,10 @@
         li {
           display: flex;
           flex-direction: column;
+
+          a {
+            z-index: 2;
+          }
 
           .wrapper {
             max-height: 3rem;
@@ -406,6 +427,7 @@
     width: 100%;
     border-bottom: 0.5rem solid var(--primary);
     position: relative;
+    z-index: -1;
     
     .text {
       /* float: left; */
@@ -431,6 +453,15 @@
       display: block;
       max-width: 500px;
       line-height: 1.1;
+    }
+  }
+
+  @keyframes slide-from-top {
+    from {
+      top: -4rem;
+    }
+    to {
+      top: 65px;
     }
   }
 </style>
