@@ -6,37 +6,70 @@
   <body>
     <header>
       <div id="logo">
-        <img src="https://1000logos.net/wp-content/uploads/2016/10/Apple_logo_grey.png" />
+        <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/logo-black.svg" />
       </div>
       <div id="nav">
         <nav>
           <ul>
-            <li><a href="#">AIRCRAFT v</a></li>
+            <li class="droplink">
+              <a href="#">AIRCRAFT v</a>
+              <div class="dropdown">
+                <ul>
+                  <div class="spacer"></div>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-3.svg" />
+                    </div>
+                    <a href="">RV-3</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-4.svg" />
+                    </div>
+                    <a href="">RV-4</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-8.svg" />
+                    </div>
+                    <a href="">RV-8/8A</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-12is.svg" />
+                    </div>
+                    <a href="">RV-12is</a>
+                  </li>
+                  <div class="spacer"></div>
+                </ul>
+              </div>
+            </li>
             <li><a href="#">BUILD</a></li>
             <li><a href="#">ABOUT</a></li>
           </ul>
         </nav>
       </div>
       <div id="buy">
-        <a href="#">ORDER A KIT</a>
+        <a href="https://uk.linkedin.com/in/clara-smallwood-30915b42">ORDER A KIT</a>
       </div>
     </header>
     <section id="hero">
       <div class="text">
         <span class="title">Vans' RV-8</span>
         <br />
-        <span class="subtitle">High performance. High practicality. </span>
+        <span class="subtitle">High performance. fly fast back to your pc. </span>
       </div>
     </section>
   </body>
 </html>
 <style>
+  /* #region vars */
   :root {
     --primary: #fc4c02;
 		--primary-hover: #395a3b;
 		--on-primary: #fff;
 
-		--bg: #eeeff1;
+		--bg: #fafafa;
 		--on-bg: #272f27;
 
 		--surface-1: #e6e4e0;
@@ -70,7 +103,8 @@
 		--container-max-width-narrow: 960px;
 		--container-padding: 0 1rem;
   }
-  
+  /* #endregion */
+  /* #region fonts */
   @import url("https://p.typekit.net/p.css?s=1&k=opi5btm&ht=tk&f=25750.25753.25761.25762.25763.25764.25765.25766.25767.25768.25757&a=646323&app=typekit&e=css"); @font-face {
     font-family: "eurostile";
     src: url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
@@ -169,7 +203,8 @@
     font-weight: 900;
     font-stretch: normal;
 }
-  
+/* #endregion */
+  /* #region boilerplate */
   h1,
 	h2,
 	h3 {
@@ -214,30 +249,50 @@
 	a {
 		color: inherit;
 	}
-
+  /* #endregion */
+  /* #region header */
   header {
     padding: 1rem 1.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    border-bottom: solid 1px var(--on-bg);
     
-    #logo img {
+    #logo {
+      width: 25rem;
+      position: relative;
       height: 4rem;
+
+      img {
+        position: absolute;
+        right: 0;
+        height: 4rem;
+      }
     }
     
-    #buy a {
-      text-decoration: none;
-      border-radius: 5rem;
-      background-color: var(--primary);
-      padding: 0.5rem 0.7rem;;
-      color: var(--on-primary);
-      font-size: var(--font-size-sm);
-      transition: background-color var(--transition);
-      font-family: var(--serif-font);
-      font-weight: 400;
-      
-      &:hover {
-        background-color: var(--primary-hover);
+    #buy {
+      width: 25rem;
+      position: relative;
+      height: 4rem;
+
+      a {
+        text-decoration: none;
+        border-radius: 5rem;
+        background-color: var(--primary);
+        padding: 0.5rem 0.7rem;;
+        color: var(--on-primary);
+        font-size: var(--font-size-sm);
+        transition: background-color var(--transition);
+        font-family: var(--serif-font);
+        font-weight: 400;
+        position: absolute;
+        right: 2rem;
+        bottom: 8px;
+
+        
+        &:hover {
+          background-color: var(--primary-hover);
+        }
       }
     }
     
@@ -249,22 +304,99 @@
         padding: 0;
         list-style: none;
         display: flex;
+
+        .droplink {
+          a:hover {
+            cursor: pointer;
+          }
+
+          &:hover > .dropdown {
+            display: block;
+          }
+
+          .dropdown {
+            display: none;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            height: 8rem;
+            position: absolute;
+            user-select: none;
+            z-index: 10;
+
+            &:hover {
+              display: block;
+            }
+
+            ul {
+              position: absolute;
+              top: 65px;
+              display: flex;
+              gap: 3rem;
+              left: 0;
+              width: 100%;
+              height: 8rem;
+              background-color: var(--bg);
+              border-bottom: solid 2px var(--on-bg);
+              transition: 
+
+              .spacer {
+                flex-grow: 1;
+              }
+
+              li {
+                margin-top: 1.5rem;
+                height: 5rem;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+
+              li a {
+                font-weight: 600;
+              }
+            }
+          }
+        }
         
-        li a {
-          text-decoration: none;
-          margin-right: 1.5rem;
-          color: inherit;
-          transition: color linear 0.15s;
-          font-family: var(--serif-font);
-          font-weight: 800;
-          
-          &:hover {
+        li {
+          display: flex;
+          flex-direction: column;
+
+          .wrapper {
+            max-height: 3rem;
+            overflow: hidden;
+
+            img {
+              max-height: 6rem;
+              clip-path: inset(0px 0px 50% 0px);
+            }
+          }
+
+          a {
+            text-decoration: none;
+            margin: 0 0.75rem;
+            color: inherit;
+            transition: color linear 0.15s;
+            font-family: var(--serif-font);
+            font-weight: 800;
+          }
+
+          &:hover > a {
             color: var(--primary);
+          }
+
+          &:hover > .wrapper > img {
+            clip-path: inset(50% 0px 0px 0px);
+            position: relative;
+            bottom: 36px;
           }
         }
       }
     }
   }
+  /* #endregion */
   
   #hero {
     background: linear-gradient(#00000022, #00000022 70%, #000000cc), url("https://www.vansaircraft.com/wp-content/uploads/2018/11/bg-hero-rv8-1.jpg");
