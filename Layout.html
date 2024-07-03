@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Vans' RV</title>
+    <title>Vans' RV-8</title>
   </head>
   <body>
     <header>
@@ -14,7 +14,7 @@
             <li class="droplink">
               <a href="#">AIRCRAFT v</a>
               <div class="dropdown">
-                <ul>
+                <ul id="dropthing" class="preload">
                   <div class="spacer"></div>
                   <li>
                     <div class="wrapper">
@@ -43,6 +43,7 @@
                   <div class="spacer"></div>
                 </ul>
               </div>
+              <div class="select"></div>
             </li>
             <li><a href="#">BUILD</a></li>
             <li><a href="#">ABOUT</a></li>
@@ -317,6 +318,9 @@
         display: flex;
 
         .droplink {
+          a {
+            z-index: 3;
+          }
           a:hover {
             cursor: pointer;
           }
@@ -325,11 +329,28 @@
             height: 12rem;
 
             & > ul {
-              animation-name: slide-from-top;
-              animation-duration: 0.6s;
+              animation: slide-from-top 0.7s;
               top: 65px;
             }
           }
+
+          &:hover > .select {
+            height: 66px;
+            width: 100%;
+          }
+
+          .select {
+            height: 2rem;
+            width: 0;
+            left: 0;
+            position: absolute;
+            z-index: 2;
+
+            &:hover + .dropdown {
+              display: block;
+            }
+          }
+
 
           .dropdown {
             /* display: none; */
@@ -354,6 +375,7 @@
               height: 8rem;
               background-color: var(--bg);
               border-bottom: solid 2px var(--on-bg);
+              animation: slide-to-top 0.6s;
               z-index: 0;
 
 
@@ -373,6 +395,10 @@
               li a {
                 font-weight: 600;
               }
+            }
+
+            .preload {
+              animation: none !important;
             }
           }
         }
@@ -464,4 +490,16 @@
       top: 65px;
     }
   }
+
+  @keyframes slide-to-top {
+    from {
+      top: 65px;
+    }
+    to {
+      top: -4rem;
+    }
+  }
 </style>
+<script>
+  setTimeout(() => {document.getElementById("dropthing").classList.remove("preload")}, 500)
+</script>
