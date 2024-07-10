@@ -1,0 +1,601 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Vans' RV-8</title>
+  </head>
+  <body>
+    <header>
+      <div id="logo">
+        <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/logo-black.svg" />
+      </div>
+      <div id="nav">
+        <nav>
+          <ul>
+            <li class="droplink">
+              <a href="#">AIRCRAFT v</a>
+              <div class="dropdown">
+                <ul id="dropthing" class="preload">
+                  <div class="spacer"></div>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-3.svg" />
+                    </div>
+                    <a href="">RV-3</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-4.svg" />
+                    </div>
+                    <a href="">RV-4</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-8.svg" />
+                    </div>
+                    <a href="">RV-8/8A</a>
+                  </li>
+                  <li>
+                    <div class="wrapper">
+                      <img src="https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/aircraft-rv-12is.svg" />
+                    </div>
+                    <a href="">RV-12is</a>
+                  </li>
+                  <div class="spacer"></div>
+                </ul>
+              </div>
+              <div class="select"></div>
+            </li>
+            <li><a href="#">BUILD</a></li>
+            <li><a href="#">ABOUT</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div id="buy">
+        <a href="https://uk.linkedin.com/in/clara-smallwood-30915b42">ORDER A KIT</a>
+      </div>
+    </header>
+    <div id="nav-cover"></div>
+    <section id="hero">
+      <div class="text">
+        <span class="title">Vans' RV-8</span>
+        <br />
+        <span class="subtitle">High performance. High adrenaline. </span>
+      </div>
+    </section>
+    <h2 style="margin-left: 15rem;">Explore the features...</h2>
+    <section id="interactive">
+        <div id="img">
+            <img src="rv-8-outline.png" id="interact-img" />
+            <span style="text-align: center;display: block; width: 100%; font-size: 0.9rem;">Click on a <img style="display: inline; height: 1rem; width: 1rem; top: 0.05rem; position: relative;" src="point.png"> to see more info. </span>
+        </div>
+        <div id="content">
+            <div id="prop">
+                <h3>Propeller</h3>
+                <p>The RV-8 comes with a 3-blade propeller as standard, and is able to be equipped with up to 210 HP, giving it a top speed of 220mph. </p>
+            </div>
+            <div id="cockpit">
+                <h3>Cockpit</h3>
+                <p>With two tandem-positioned seats, the RV-8 is assured to give you a fighter-like feel. The front seat sits pilots up to 6'7" with its wide fuselage and comfortable cockpit. <br />Two baggage compartments (one forward and one aft) means that there is plenty of storage for your cross-country journeys. </p>
+            </div>
+        </div>
+    </section>
+  </body>
+</html>
+<script>
+    let img = document.getElementById("interact-img");
+
+    const points = [
+        {
+            minX: 388,
+            minY: 81,
+            element: document.getElementById("prop")
+        },
+        {
+            minX: 256,
+            minY: 65,
+            element: document.getElementById("cockpit")
+        }
+    ]
+
+    const allElements = [
+        document.getElementById("prop"),
+        document.getElementById("cockpit")
+    ]
+
+    img.onclick = function(evt) {
+        var rect = evt.target.getBoundingClientRect();
+        var x = evt.clientX - rect.left; //x position within the element.
+        var y = evt.clientY - rect.top;  //y position within the element.
+        for (let i = 0; i < points.length; i++) {
+            let p = points[i];
+            let px = p.minX * 1.5;
+            let py = p.minY * 1.5;
+            if (x > px && x < px + 15 && y > py && y < py + 15) {
+                console.log("Clicked on point " + i);
+                // hide all elements
+                for (let i = 0; i < allElements.length; i++) {
+                    allElements[i].style.display = "none";
+                }
+                points[i].element.style.display = "block";
+            }
+        }
+        console.log("Left? : " + x + " ; Top? : " + y + ".");
+    }
+</script>
+<style>
+  /* #region vars */
+  :root {
+    --primary: #fc4c02;
+		--primary-hover: #395a3b;
+		--on-primary: #fff;
+
+		--bg: #fafafa;
+		--on-bg: #272f27;
+
+		--surface-1: #e6e4e0;
+		--on-surface-1: #272f27;
+		--surface-2: #c3d9c4;
+		--on-surface-2: #000;
+
+		--shape-radius: clamp(1rem, 2rem, 3rem);
+		--btn-radius: 0.5rem;
+
+		--transition: 0.2s ease-in-out;
+    
+    --serif-font: "eurostile", serif;
+		--sans-font: 
+			"Lato",
+			-apple-system,
+			BlinkMacSystemFont,
+			sans-serif;
+
+		--font-size-sm: clamp(14.4px, 0.07vw + 14.13px, 15px);
+		--font-size-base: clamp(18px, 0.23vw + 17.09px, 20px);
+		--font-size-md: clamp(22.5px, 0.47vw + 20.61px, 26.66px);
+		--font-size-lg: clamp(28.13px, 0.84vw + 24.76px, 35.54px);
+		--font-size-xl: clamp(35.16px, 1.39vw + 29.6px, 47.37px);
+		--font-size-xxl: clamp(43.95px, 2.18vw + 35.22px, 63.15px);
+		--font-size-xxxl: clamp(54.93px, 3.32vw + 41.64px, 84.17px);
+
+		--section-margin: 3rem;
+		--theme-grid-gap: 1rem;
+		--container-max-width: 1440px;
+		--container-max-width-narrow: 960px;
+		--container-padding: 0 1rem;
+  }
+  /* #endregion */
+  /* #region fonts */
+  @import url("https://p.typekit.net/p.css?s=1&k=opi5btm&ht=tk&f=25750.25753.25761.25762.25763.25764.25765.25766.25767.25768.25757&a=646323&app=typekit&e=css"); @font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"),url("https://use.typekit.net/af/2d8a3b/00000000000000003b9b2159/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"),url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"),url("https://use.typekit.net/af/6be0f8/00000000000000003b9b2163/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff2"),url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("woff"),url("https://use.typekit.net/af/741689/00000000000000003b9b2165/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n8&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 800;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/463c95/00000000000000003b9b2169/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"),url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff"),url("https://use.typekit.net/af/c6e0fb/00000000000000003b9b2160/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 500;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff2"),url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("woff"),url("https://use.typekit.net/af/d262e5/00000000000000003b9b215a/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i4&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 400;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff2"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("woff"),url("https://use.typekit.net/af/198f80/00000000000000003b9b2162/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i7&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 700;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff2"),url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("woff"),url("https://use.typekit.net/af/5f50fa/00000000000000003b9b2164/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i8&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 800;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff2"),url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("woff"),url("https://use.typekit.net/af/08504c/00000000000000003b9b2168/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i9&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 900;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile";
+    src: url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff2"),url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("woff"),url("https://use.typekit.net/af/418096/00000000000000003b9b215f/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=i5&v=3") format("opentype");
+    font-display: auto;
+    font-style: italic;
+    font-weight: 500;
+    font-stretch: normal;
+}
+
+@font-face {
+    font-family: "eurostile-extended";
+    src: url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff2"),url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("woff"),url("https://use.typekit.net/af/ab3a28/00000000000000000001799b/27/a?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n9&v=3") format("opentype");
+    font-display: auto;
+    font-style: normal;
+    font-weight: 900;
+    font-stretch: normal;
+}
+/* #endregion */
+  /* #region boilerplate */
+  h1,
+	h2,
+	h3 {
+		font-family: var(--serif-font);
+		font-weight: 800;
+	}
+
+	h1 {
+		font-size: var(--font-size-xxl);
+		line-height: 1.1;
+	}
+
+	h2 {
+		font-size: var(--font-size-xl);
+		line-height: 1.1;
+	}
+
+	h3 {
+		font-size: var(--font-size-lg);
+		font-weight: 500;
+	}
+
+	h6 {
+		font-size: var(--font-size-sm);
+	}
+  
+  html {
+		font-family: system-ui, sans-serif;
+		background: var(--bg);
+		background-size: 224px;
+		height: 100%;
+	}
+	body {
+		margin: 0;
+		padding: 0;
+		line-height: 1.5;
+		font-family: var(--sans-font);
+		font-size: var(--font-size-base);
+		color: var(--on-bg);
+		height: 100%;
+	}
+	a {
+		color: inherit;
+	}
+  /* #endregion */
+  /* #region header */
+  #nav-cover {
+    height: 97px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+    background-color: var(--bg);
+    border-bottom: solid 2px var(--on-bg);
+  }
+
+  header {
+    padding: 1rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    #logo {
+      width: 25rem;
+      position: relative;
+      height: 4rem;
+      z-index: 2;
+
+      img {
+        position: absolute;
+        right: 0;
+        height: 4rem;
+      }
+    }
+    
+    #buy {
+      width: 25rem;
+      position: relative;
+      height: 4rem;
+      z-index: 2;
+
+      a {
+        text-decoration: none;
+        border-radius: 5rem;
+        background-color: var(--primary);
+        padding: 0.5rem 0.7rem;;
+        color: var(--on-primary);
+        font-size: var(--font-size-sm);
+        transition: background-color var(--transition);
+        font-family: var(--serif-font);
+        font-weight: 400;
+        position: absolute;
+        right: 2rem;
+        bottom: 8px;
+        
+        &:hover {
+          background-color: var(--primary-hover);
+        }
+      }
+    }
+    
+    nav {
+      display: flex;
+      
+      ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        display: flex;
+
+        .droplink {
+          a {
+            z-index: 3;
+          }
+          a:hover {
+            cursor: pointer;
+          }
+
+          &:hover > .dropdown {
+            height: 12rem;
+
+            & > ul {
+              animation: slide-from-top 0.7s;
+              top: 65px;
+            }
+          }
+
+          &:hover > .select {
+            height: 66px;
+            width: 100%;
+          }
+
+          .select {
+            height: 2rem;
+            width: 0;
+            left: 0;
+            position: absolute;
+            z-index: 2;
+
+            &:hover + .dropdown {
+              display: block;
+            }
+          }
+
+
+          .dropdown {
+            /* display: none; */
+            left: 0;
+            width: 100%;
+            text-align: center;
+            height: 2rem;
+            position: absolute;
+            user-select: none;
+
+            &:hover {
+              display: block;
+            }
+
+            ul {
+              position: absolute;
+              top: -4rem;
+              display: flex;
+              gap: 3rem;
+              left: 0;
+              width: 100%;
+              height: 8rem;
+              background-color: var(--bg);
+              border-bottom: solid 2px var(--on-bg);
+              animation: slide-to-top 0.6s;
+              z-index: 0;
+
+
+              .spacer {
+                flex-grow: 1;
+              }
+
+              li {
+                margin-top: 1.5rem;
+                height: 5rem;
+
+                &:hover {
+                  cursor: pointer;
+                }
+              }
+
+              li a {
+                font-weight: 600;
+              }
+            }
+
+            .preload {
+              animation: none !important;
+            }
+          }
+        }
+        
+        li {
+          display: flex;
+          flex-direction: column;
+
+          a {
+            z-index: 2;
+          }
+
+          .wrapper {
+            max-height: 3rem;
+            overflow: hidden;
+
+            img {
+              max-height: 6rem;
+              clip-path: inset(0px 0px 50% 0px);
+            }
+          }
+
+          a {
+            text-decoration: none;
+            margin: 0 0.75rem;
+            color: inherit;
+            transition: color linear 0.15s;
+            font-family: var(--serif-font);
+            font-weight: 800;
+          }
+
+          &:hover > a {
+            color: var(--primary);
+          }
+
+          &:hover > .wrapper > img {
+            clip-path: inset(50% 0px 0px 0px);
+            position: relative;
+            bottom: 36px;
+          }
+        }
+      }
+    }
+  }
+  /* #endregion */
+  
+  #hero {
+    background: linear-gradient(#00000022, #00000022 70%, #000000cc), url("https://www.vansaircraft.com/wp-content/uploads/2018/11/bg-hero-rv8-1.jpg");
+    background-size: cover;
+    background-position: center;
+    height: calc(100vh - 15rem);
+    width: 100%;
+    border-bottom: 0.5rem solid var(--primary);
+    position: relative;
+    z-index: -1;
+    
+    .text {
+      /* float: left; */
+      position: absolute;
+      bottom: 3rem;
+      left: 20rem;
+    }
+    
+    .title {
+      font-family: var(--serif-font);
+      color: var(--on-primary);
+      font-size: var(--font-size-xxl);
+      font-style: italic;
+      font-weight: 900;
+    }
+    
+    .subtitle {
+      font-family: var(--serif-font);
+      font-size: var(--font-size-lg);
+      font-style: italic;
+      font-weight: 600;
+      color: var(--on-primary);
+      display: block;
+      max-width: 500px;
+      line-height: 1.1;
+    }
+  }
+
+  #interactive {
+    width: 80%;
+    margin: 5rem auto;
+    display: flex;
+    flex-direction: row;
+    #img {
+        flex-grow: 2;
+        img {
+            width: 609px;
+            margin: auto;
+            display: block;
+            margin-top: 2rem;
+        }
+    }
+
+    #content {
+        width: 25rem;
+
+        div {
+            display: none;
+            width: 20rem;
+            border-radius: 10px;
+            background-color: var(--bg);
+            border: solid 2px #a8a8a8;
+            padding: 0 1rem;
+
+            h3 {
+                font-family: var(--serif-font);
+                font-size: var(--font-size-lg);
+                font-weight: 800;
+                color: var(--on-bg);
+                margin: 1rem 0;
+            }
+        }
+    }
+
+  }
+
+  @keyframes slide-from-top {
+    from {
+      top: -4rem;
+    }
+    to {
+      top: 65px;
+    }
+  }
+
+  @keyframes slide-to-top {
+    from {
+      top: 65px;
+    }
+    to {
+      top: -4rem;
+    }
+  }
+</style>
+<script>
+  setTimeout(() => {document.getElementById("dropthing").classList.remove("preload")}, 500)
+</script>
