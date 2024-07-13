@@ -108,6 +108,18 @@
         </div>
     </section>
     <img style="margin: none; width: 100%; height: auto;" src="https://www.vansaircraft.com/wp-content/uploads/2018/11/rv-8-2.jpg" />
+    <section id="models">
+      <div>
+        <h3>RV-8</h3>
+        <img src="https://www.vansaircraft.com/wp-content/uploads/2019/02/rv-8-2.png" />
+        <p>With the little wheel mounted on the back, the conventional-gear RV-8 provides the popular combination of great looks and high performance. With a slightly lower drag profile, it may be just a hair faster than its tricycle-gear brother. </p>
+      </div>
+      <div>
+        <h3>RV-8A</h3>
+        <img src="https://www.vansaircraft.com/wp-content/uploads/2018/11/rv-8a.png" />
+        <p>Configured to stand on tricycle-gear, the RV-8A retains the model's famous great looks and performance, adding improved visibility on the ground. Once in the air, you'll forget where the wheels are, as both models handle and perform just about identically.</p>
+      </div>
+    </section>
   </body>
 </html>
 <script>
@@ -682,6 +694,32 @@
                   font-style: italic;
               }
           }
+      }
+    }
+  }
+
+  #models {
+    background-image: url("https://www.vansaircraft.com/wp-content/themes/vans-aircraft/dist/images/bg-topographical.jpg");
+    background-size: cover;
+    justify-content: space-evenly;
+
+    display: flex;
+    padding: 3rem 15rem;
+    text-align: center;
+    color: white;
+
+    div {
+      width: 25%;
+
+      h3 {
+        font-family: var(--serif-font);
+        font-size: var(--font-size-lg);
+        font-weight: 800;
+        font-style: italic;
+      }
+
+      img {
+        width: 100%;
       }
     }
   }
