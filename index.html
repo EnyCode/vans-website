@@ -69,37 +69,65 @@
             <span style="text-align: center;display: block; width: 100%; font-size: 0.9rem;">Click on a <img style="display: inline; height: 1rem; width: 1rem; top: 0.05rem; position: relative;" src="point.png"> to see more info. </span>
         </div>
         <div id="content">
-            <div id="prop">
-                <h3>Propeller</h3>
-                <p>The RV-8 comes with a 3-blade propeller as standard, and is able to be equipped with up to 210 HP, giving it a top speed of 220mph. </p>
-            </div>
-            <div id="cockpit">
-                <h3>Cockpit</h3>
-                <p>With two tandem-positioned seats, the RV-8 is assured to give you a fighter-like feel. The front seat sits pilots up to 6'7" with its wide fuselage and comfortable cockpit. <br />Two baggage compartments (one forward and one aft) means that there is plenty of storage for your cross-country journeys. </p>
-            </div>
+            <h3 id="header"></h3>
+            <p id="text"></p>
         </div>
     </section>
+    <hr />
+    <section id="features">
+      <div>
+        <h4>SPEED AND AGILITY</h4>
+        <p>No other RV is faster. With a top speed of around 220 mph, the RV-8 gets you there quickly while delivering excellent performance on the lower end of the scale plus quick, responsive handling.</p>
+      </div>
+      <span class="vl"></span>
+      <div>
+        <h4>CENTERLINE SEATING</h4>
+        <p>Nothing beats sitting right in the middle of the airplane. Wear it like a glove - it becomes a natural, intuitive extension of your body.</p>
+      </div>
+      <span class="vl"></span> 
+      <div>
+        <h4>AEROBATICS</h4>
+        <p>Want to do some loops and rolls? The RV-8 is a fully aerobatic-capable airplane, stable and responsive. You'll even see RV-8's competing in sportsman and intermediate categories.</p>
+      </div>
+    </section>
+    <hr />
+    <section id="tech-specs">
+      <h2 style="margin-left: 15rem;">Tech Specs</h2>
+        <div>
+          <ul>
+              <li><span class="key">Model</span><span class="value">RV-8</span></li>
+              <li><span class="key">Engine</span><span class="value">150 - 210 HP</span></li>
+              <li><span class="key">Top Speed</span><span class="value">220 mph</span></li>
+              <li><span class="key">Ceiling</span><span class="value">21,000+ ft</span></li>
+              <li><span class="key">Stall Speed</span><span class="value">58 mph</span></li>
+              <li><span class="key">Fuel Capacity</span><span class="value">42 US gal</span></li>
+              <li><span class="key">Seats</span><span class="value">2</span></li>
+              <li><span class="key">Baggage</span><span class="value">125 lbs</span></li>
+          </ul>
+          <img src="https://www.vansaircraft.com/wp-content/uploads/2018/11/rv-8-2.jpg" />
+        </div>
+    </section>
+    <img style="margin: none; width: 100%; height: auto;" src="https://www.vansaircraft.com/wp-content/uploads/2018/11/rv-8-2.jpg" />
   </body>
 </html>
 <script>
     let img = document.getElementById("interact-img");
+    const header = document.getElementById("header");
+    const text = document.getElementById("text");
 
     const points = [
         {
             minX: 388,
             minY: 81,
-            element: document.getElementById("prop")
+            header: "Propeller",
+            text: "The RV-8 comes with a 3-blade propeller as standard, and is able to be equipped with up to 210 HP, giving it a top speed of 220mph. "
         },
         {
             minX: 256,
             minY: 65,
-            element: document.getElementById("cockpit")
+            header: "Cockpit",
+            text: "With two tandem-positioned seats, the RV-8 is assured to give you a fighter-like feel. The front seat sits pilots up to 6'7\" with its wide fuselage and comfortable cockpit. <br />Two baggage compartments (one forward and one aft) means that there is plenty of storage for your cross-country journeys. "
         }
-    ]
-
-    const allElements = [
-        document.getElementById("prop"),
-        document.getElementById("cockpit")
     ]
 
     img.onclick = function(evt) {
@@ -112,11 +140,8 @@
             let py = p.minY * 1.5;
             if (x > px && x < px + 15 && y > py && y < py + 15) {
                 console.log("Clicked on point " + i);
-                // hide all elements
-                for (let i = 0; i < allElements.length; i++) {
-                    allElements[i].style.display = "none";
-                }
-                points[i].element.style.display = "block";
+                header.innerHTML = p.header;
+                text.innerHTML = p.text;
             }
         }
         console.log("Left? : " + x + " ; Top? : " + y + ".");
@@ -551,31 +576,114 @@
             width: 609px;
             margin: auto;
             display: block;
-            margin-top: 2rem;
+            margin-top: 5rem;
         }
     }
 
     #content {
-        width: 25rem;
+        margin-right: 5rem;
+        width: 20rem;
+        border-radius: 10px;
+        background-color: var(--bg);
+        border: solid 2px #a8a8a8;
+        padding: 2rem 1rem;
+        height: 25rem;
 
-        div {
-            display: none;
-            width: 20rem;
-            border-radius: 10px;
-            background-color: var(--bg);
-            border: solid 2px #a8a8a8;
-            padding: 0 1rem;
-
-            h3 {
-                font-family: var(--serif-font);
-                font-size: var(--font-size-lg);
-                font-weight: 800;
-                color: var(--on-bg);
-                margin: 1rem 0;
-            }
+        h3 {
+            font-family: var(--serif-font);
+            font-size: var(--font-size-lg);
+            font-weight: 800;
+            color: var(--on-bg);
+            margin: 1rem 0;
         }
     }
 
+  }
+
+  hr {
+    border: solid 0.25rem var(--primary);
+    margin: 0;
+  }
+
+  #features {
+    display: flex;
+    padding: 0 10rem;
+    justify-content: space-around;
+    text-align: center;
+    background: repeating-linear-gradient(
+     -45deg,
+     #1c1c1c,
+      #1c1c1c 10px,
+     #121212 10px,
+      #121212 20px
+    );
+    color: white;
+
+
+    .vl {
+      display: block;
+      margin: 3rem 0;
+      height: 17.5rem;
+      border-left: solid 2px white;
+    }
+
+    div {
+      width: 20rem;
+      padding: 2rem 0;
+
+      h4 {
+        font-family: var(--serif-font);
+        font-size: var(--font-size-md);
+        font-weight: 800;
+      }
+    }
+  }
+
+  #tech-specs {
+    background-image: url("https://www.vansaircraft.com/wp-content/uploads/2018/11/bg-plans.jpg");
+    background-size: cover;
+    padding-top: 2rem;
+    padding-bottom: 4rem;
+
+    h2 {
+      margin-top: 0;
+    }
+
+    div {
+      margin: 5rem auto;
+      display: flex;
+      flex-direction: row;
+      width: 80%;
+      margin-left: 15rem;
+      gap: 4rem;
+      margin-bottom: 0;
+
+      img {
+          width: 50%;
+          border-radius: 1rem;
+      }
+
+      ul {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+          width: 50%;
+
+          li {
+              display: flex;
+              justify-content: space-between;
+              border-bottom: solid 2px #a8a8a8;
+              padding-bottom: 0.5rem;
+              margin-bottom: 0.5rem;
+
+              .key {
+                  font-weight: 800;
+                  font-family: var(--serif-font);
+                  font-style: italic;
+              }
+          }
+      }
+    }
   }
 
   @keyframes slide-from-top {
